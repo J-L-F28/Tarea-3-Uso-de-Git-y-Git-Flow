@@ -25,11 +25,13 @@
           <div class="campo">
             <label for="matricula">Matrícula</label>
             <input type="text" id="matricula" placeholder="2023-0451" />
+            <span class="campo__error" id="error-matricula"></span>
           </div>
 
           <div class="campo">
             <label for="nombre">Nombre completo</label>
             <input type="text" id="nombre" placeholder="María Fernández" />
+            <span class="campo__error" id="error-nombre"></span>
           </div>
 
           <div class="campo">
@@ -43,16 +45,19 @@
               <option>Mecatrónica</option>
               <option>Inteligencia Artificial</option>
             </select>
+            <span class="campo__error" id="error-carrera"></span>
           </div>
 
           <div class="campo">
             <label for="correo">Correo institucional</label>
             <input type="email" id="correo" placeholder="mfernandez@itla.edu.do" />
+            <span class="campo__error" id="error-correo"></span>
           </div>
 
           <div class="campo">
             <label for="indice">Índice académico</label>
             <input type="number" id="indice" step="0.01" min="0" max="4" placeholder="3.75" />
+            <span class="campo__error" id="error-indice"></span>
           </div>
 
           <div class="acciones-formulario">
@@ -76,6 +81,7 @@
 
     <script src="js/storage.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/validacion.js"></script>
     <script src="js/registro.js"></script>
     <script src="js/listado.js"></script>
     <script src="js/edicion.js"></script>
