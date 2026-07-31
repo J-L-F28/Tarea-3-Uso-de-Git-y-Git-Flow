@@ -20,6 +20,7 @@ const Registro = (() => {
   const limpiar = () => {
     formulario().reset();
     campo("estudiante-id").value = "";
+    Validacion.limpiarErrores();
   };
 
   const crear = (datos) => {
@@ -34,6 +35,11 @@ const Registro = (() => {
 
     const datos = leerFormulario();
     const id = Number(campo("estudiante-id").value);
+
+    if (!Validacion.esValido(datos, id)) {
+      App.notificar("Revise los campos marcados en rojo.", "error");
+      return;
+    }
 
     if (id && actualizador) actualizador(id, datos);
     else crear(datos);
