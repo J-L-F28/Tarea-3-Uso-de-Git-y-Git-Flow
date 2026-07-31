@@ -36,3 +36,4 @@ const Registro = (() => {
 })();
 
 App.alIniciar(Registro.iniciar);
+// Modulo de registro 
