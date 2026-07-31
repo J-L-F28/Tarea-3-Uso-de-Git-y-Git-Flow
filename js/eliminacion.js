@@ -34,3 +34,4 @@ const Eliminacion = (() => {
 })();
 
 App.alIniciar(Eliminacion.iniciar);
+// Modulo de eliminacion 
