@@ -1,4 +1,10 @@
 const Registro = (() => {
+  let actualizador = null;
+
+  const definirActualizador = (funcion) => {
+    actualizador = funcion;
+  };
+
   const formulario = () => document.getElementById("formulario-estudiante");
 
   const campo = (nombre) => document.getElementById(nombre);
@@ -25,14 +31,20 @@ const Registro = (() => {
 
   const manejarEnvio = (evento) => {
     evento.preventDefault();
-    crear(leerFormulario());
+
+    const datos = leerFormulario();
+    const id = Number(campo("estudiante-id").value);
+
+    if (id && actualizador) actualizador(id, datos);
+    else crear(datos);
+
     limpiar();
     document.dispatchEvent(new CustomEvent("estudiantes:actualizados"));
   };
 
   const iniciar = () => formulario().addEventListener("submit", manejarEnvio);
 
-  return { iniciar, limpiar, campo };
+  return { iniciar, limpiar, campo, definirActualizador };
 })();
 
 App.alIniciar(Registro.iniciar);
