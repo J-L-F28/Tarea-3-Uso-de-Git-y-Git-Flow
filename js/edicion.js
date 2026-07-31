@@ -54,3 +54,4 @@ const Edicion = (() => {
 })();
 
 App.alIniciar(Edicion.iniciar);
+// Modulo de edicion 
